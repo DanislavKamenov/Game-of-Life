@@ -1,28 +1,28 @@
-const canvasWidth = 1920;
-const canvasHeight = 966;
+const canvasWidth = window.innerWidth;
+const canvasHeight = window.innerHeight;
 const resolution = 25;
 
 function start() {    
     let renderer = setupCanvas();
-    let cols = Math.floor(canvasWidth / resolution);
-    let rows = Math.floor(canvasHeight / resolution);
-    let matrix = SeedGenerator.createSeed(cols, rows, 0.5);
+    let rows = Math.floor(canvasWidth / resolution);
+    let cols = Math.floor(canvasHeight / resolution);
+    let seed = SeedGenerator.createSeed(rows, cols, 0.5);
 
-    draw(renderer, matrix);
+    draw(renderer, seed);
 }
 
-function draw(renderer, matrix) {
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
+function draw(renderer, seed) {
+    for (let i = 0; i < seed.length; i++) {
+        for (let j = 0; j < seed[i].length; j++) {
             let x =  resolution * i;
             let y = resolution * j;
 
-            matrix[i][j] > 0 ? renderer.ctx.fillStyle = 'green' : renderer.ctx.fillStyle = 'white';
+            seed[i][j] > 0 ? renderer.ctx.fillStyle = 'green' : renderer.ctx.fillStyle = 'white';
             renderer.ctx.fillRect(x, y, resolution - 1, resolution - 1);
         }
     }
 
-    let nextGen = SeedGenerator.createNextGeneration(matrix);
+    let nextGen = SeedGenerator.createNextGeneration(seed);
     setTimeout(() => draw(renderer, nextGen), 100);
 }
 

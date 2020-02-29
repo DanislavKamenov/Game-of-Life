@@ -1,6 +1,6 @@
 class SeedGenerator {
-    static createSeed(cols, rows, livingCellsPercent) {
-        let seed = SeedGenerator._createEmptySeed(cols, rows);
+    static createSeed(rows, cols, livingCellsPercent) {
+        let seed = SeedGenerator._createEmptySeed(rows, cols);
 
         for (let i = 0; i < seed.length; i++) {
             for (let j = 0; j < seed[i].length; j++) {
@@ -33,11 +33,11 @@ class SeedGenerator {
         return next;
     }
 
-    static _createEmptySeed(cols, rows) {
-        let seed = new Array(cols);
-        for (let i = 0; i < cols; i++) {
-            seed[i] = new Array(rows);
-            for (let j = 0; j < seed[i].length; j++) {
+    static _createEmptySeed(rows, cols) {
+        let seed = new Array(rows);
+        for (let i = 0; i < rows; i++) {
+            seed[i] = new Array(cols);
+            for (let j = 0; j < cols; j++) {
                 seed[i][j] = 0;
             }
         }
@@ -50,10 +50,10 @@ class SeedGenerator {
 
         for (let i = -1; i < 2; i++) {
             for (let j = -1; j < 2; j++) {
-                let cols = (x + i + seed.length) % seed.length;
-                let rows = (y + j + seed[x].length) % seed[x].length;
+                let rows = (x + i + seed.length) % seed.length;
+                let cols = (y + j + seed[x].length) % seed[x].length;
     
-               livingNeighbours += seed[cols][rows];       
+               livingNeighbours += seed[rows][cols];       
             }
         }
     
