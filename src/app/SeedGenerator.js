@@ -1,4 +1,4 @@
-class SeedGenerator {
+export default class SeedGenerator {
     static createSeed(rows, cols, livingCellsPercent) {
         let seed = SeedGenerator._createEmptySeed(rows, cols);
 

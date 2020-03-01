@@ -1,8 +1,10 @@
+import SeedGenerator from './SeedGenerator';
+
 const canvasWidth = window.innerWidth;
 const canvasHeight = window.innerHeight;
 const resolution = 25;
 
-function start() {    
+export function start() {    
     let renderer = setupCanvas();
     let rows = Math.floor(canvasWidth / resolution);
     let cols = Math.floor(canvasHeight / resolution);

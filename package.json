@@ -1,0 +1,24 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "description": "A JavaScript implementation of Conway's Game of Life",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanislavKamenov/Game-of-Life.git"
+  },
+  "author": "DanislavKamenov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanislavKamenov/Game-of-Life/issues"
+  },
+  "homepage": "https://github.com/DanislavKamenov/Game-of-Life#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
