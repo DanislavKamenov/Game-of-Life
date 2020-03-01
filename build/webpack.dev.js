@@ -5,6 +5,7 @@ const loaders = require('./loaders/dev.loaders');
 
 module.exports = merge(commonConfig, {
     mode: 'development',
+    devtool: 'inline-cheap-module-source-map',
     plugins,
     module: {
         rules: loaders,
