@@ -5,9 +5,17 @@ const loaders = require('./loaders/dev.loaders');
 
 module.exports = merge(commonConfig, {
     mode: 'development',
+    output: {
+        filename: "app.js",
+    },
     devtool: 'inline-cheap-module-source-map',
     plugins,
     module: {
         rules: loaders,
+    },
+    devServer: {
+        compress: true,
+        writeToDisk: true,
+        open: true,
     }
 });

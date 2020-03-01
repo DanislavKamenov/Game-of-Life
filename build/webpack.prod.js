@@ -5,6 +5,9 @@ const loaders = require('./loaders/prod.loaders');
 
 module.exports = merge(commonConfig, {
     mode: 'production',
+    output: {
+        filename: "app-[contentHash].js",
+    },
     plugins,
     module: {
         rules: loaders,

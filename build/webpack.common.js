@@ -5,7 +5,6 @@ const loaders = require('./loaders/common.loaders');
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: "app-[contentHash].js",
         path: path.resolve(__dirname, '../dist'),
     },
     plugins,
