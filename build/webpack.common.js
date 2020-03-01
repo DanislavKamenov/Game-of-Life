@@ -1,5 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const plugins = require('./plugins/common.plugins');
+const loaders = require('./loaders/common.loaders');
 
 module.exports = {
     entry: './src/index.js',
@@ -7,9 +8,8 @@ module.exports = {
         filename: "app-[contentHash].js",
         path: path.resolve(__dirname, '../dist'),
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/template.html',
-        })
-    ]
+    plugins,
+    module: {
+        rules: loaders,
+    }
 }
