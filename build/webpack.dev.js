@@ -14,8 +14,8 @@ module.exports = merge(commonConfig, {
         rules: loaders,
     },
     devServer: {
-        compress: true,
         writeToDisk: true,
         open: true,
+        noInfo: true,
     }
 });

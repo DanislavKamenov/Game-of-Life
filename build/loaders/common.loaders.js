@@ -1,1 +1,6 @@
-module.exports = [];
+module.exports = [
+    {
+        test: /\.html$/i,
+        loader: 'html-loader',
+    },
+  ];
